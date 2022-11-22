@@ -2,21 +2,32 @@ import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 
 export const Container = styled("div")({
-    margin:"177px 91px 94px 91px",
-    minHeight:"calc(100vh - 461px)",
+    margin: "177px 91px 94px 91px",
+    minHeight: "calc(100vh - 461px)",
 });
 
-export const ExternDiv = styled("div")({
+export const ExternDiv = styled("div")(({ theme }) => ({
   //height:"350px",
+  margin:"auto",
   width: "70vw",
-  display:"flex",
+  display: "flex",
+  flexDirection:"column",
+  justifyContent:"center",
   img: {
-    marginRight:"100px",
-    marginTop: "15px",
+    margin:"15px auto 0 auto",
     minWidth: "330px",
     height: "320px",
   },
-});
+  [theme.breakpoints.up(1050)]: {
+    display:"flex",
+    flexDirection:"row",
+    img:{
+      justifyContent:"center",
+      marginRight: "100px",
+      marginTop: "15px",
+    },
+  },
+}));
 
 export const TextInformations = styled("div")({
   //height:"300px",
@@ -60,10 +71,10 @@ export const AddtoCar = styled("button")({
 });
 
 export const ProductPrice = styled("p")({
-  display:"flex",
-  alignItems:"center",
-  textAlign:"center",
-  marginTop: "100px",
+  display: "flex",
+  alignItems: "center",
+  textAlign: "center",
+  marginTop: "50px",
   color: "#000000",
   fontSize: "24px",
   fontWeight: 500,

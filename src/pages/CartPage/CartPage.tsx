@@ -19,11 +19,11 @@ export const CartPage: React.FC = () => {
           <ItemsArea>
             {
               cart?.map(product => <CartItems product = {product}/>)
-            }
+            } 
           </ItemsArea>
           <PaymentArea>
             <DivValues><p>Freight</p><span>R$ 00,00</span></DivValues>
-            <DivValues><p>Discount</p><span>- R$ 58,00</span></DivValues>
+            <DivValues><p>Discount</p><span>- R$ 00,00</span></DivValues>
             <TotalValue></TotalValue>
             <DivValues><p>Total</p><span>U$ {priceCart()}</span></DivValues>
             <FinishButton><p>Finish Purchase</p></FinishButton>

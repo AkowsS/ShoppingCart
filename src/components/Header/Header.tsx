@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
         <DivOtions>
           <Link to="/"><p>HOME</p></Link>
           <Link to=""><p>CONTACT</p></Link>
+          <Link to="/login"><p>LOGIN</p></Link>
           <CartBox>
             <Link to="/cart-page"><img src={CarIcon} alt="carIcon"/><p>{Cartquantity()}</p></Link>
           </CartBox>

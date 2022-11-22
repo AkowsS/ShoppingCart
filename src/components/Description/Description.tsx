@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ProductInfo, ValueContext } from "../../context/Cart";
-import{AddtoCar, CentralizeItens, Container, ExternDiv, ItemDescription, ItemTitle, ProductPrice, TextInformations} from "./Description.styles";
+import{AddtoCar, CentralizeItens, Container, ExternDiv, ItemDescription, ItemTitle, ProductPrice, TextInformations } from "./Description.styles";
 
 
 export function Description({data}:any){
@@ -26,7 +26,8 @@ export function Description({data}:any){
         <TextInformations>
             <ItemTitle>{product?.title}<br/></ItemTitle>
             <ItemDescription>{product?.description}</ItemDescription>
-             <ProductPrice><p>Value:</p>U$ {product?.price}</ProductPrice>
+            <ProductPrice>Product Rating: {product.rating?.rate}</ProductPrice>
+            <ProductPrice><p>Value:</p>U$ {product?.price}</ProductPrice>
         </TextInformations>
       </ExternDiv>
         <CentralizeItens>

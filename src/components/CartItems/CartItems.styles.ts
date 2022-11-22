@@ -2,11 +2,15 @@ import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 
 
-export const Container = styled("div")({
+export const Container = styled("div")(({theme})=>({
   backgroundColor:"#FFFFFF",
   alignItems:"center",
-});
-export const CartItem = styled("div")({
+  [theme.breakpoints.down(1090)]: {
+   marginBottom:"20px",
+   height:"250px",
+  },
+}));
+export const CartItem = styled("div")(({theme})=>({
   //width:"1009px",
   alignItems:"center",
   display:"flex",
@@ -15,7 +19,15 @@ export const CartItem = styled("div")({
     width:"108px",
     height:"105px",
   },
-});
+  [theme.breakpoints.down(1090)]: {
+    display:"flex",
+    flexDirection:"column",
+    img:{
+      margin:"0 0 0 0",
+      marginTop:"15px",
+    },
+  },
+}));
 export const ItemOptions = styled("span")({
   alignItems:"center",
   fontWeight: 500,
@@ -27,8 +39,11 @@ export const ItemOptions = styled("span")({
 export const TextIformations = styled("div")({
   marginLeft:"15px",
   width:"284px",
+  a: {
+    textDecoration:"none",
+  },
 });
-export const AmountItems = styled("div")({
+export const AmountItems = styled("div")(({theme})=>({
   marginLeft:"auto",
   marginRight:"30px",
   height:"29px",
@@ -44,7 +59,11 @@ export const AmountItems = styled("div")({
     color: "#A1A1A1",
     height:"29px",
   },
-});
+  [theme.breakpoints.down(1090)]: {
+    marginLeft:"auto",
+    marginRight:"auto",
+  },
+}));
 export const DecrementItemButton = styled("button")({
   height: "29px",
   marginRight: "15px",

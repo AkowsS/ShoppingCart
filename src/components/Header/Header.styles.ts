@@ -15,8 +15,8 @@ export const DivExtern = styled("div")({
   display: "flex",
   justifyContent: "space-between",
   width: "100%",
-  marginLeft:"118px",
-  marginRight:"118px",
+  marginLeft:"4vw",
+  marginRight:"1vw",
 });
 export const DivOtions = styled("div")({
   width: "500px",

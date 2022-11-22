@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { ValueContext } from '../../context/Cart';
 import { Container, CartItem,ItemOptions,TextIformations,AmountItems,RemoveItemButton,AddItemButton,DecrementItemButton } from './CartItems.styles';
 import {ProductCart} from '../../context/Cart';
+import { Link } from 'react-router-dom';
 
 
 interface CartItemsProps{
@@ -18,9 +19,9 @@ export const CartItems: React.FC <CartItemsProps> = (
   return (
     <Container>
         <CartItem>
-          <img src={product.image} alt="Product" />
+          <Link to={`/product-description/${product.id}`}><img src={product.image} alt="Product" /></Link>
           <TextIformations>
-            <ItemOptions>{product.title}<br/></ItemOptions>
+            <Link to={`/product-description/${product.id}`}><ItemOptions >{product.title}<br/></ItemOptions></Link>
             <ItemOptions>{product.count} unidade(s) </ItemOptions>
             <ItemOptions>Cor: verde</ItemOptions>
           </TextIformations>
