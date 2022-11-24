@@ -11,8 +11,11 @@ export const Container = styled("div")({
   backgroundRepeat:"no-repeat",
   backgroundAttachment:"fixed",
 });
-export const DivIntern = styled("div")({
-  margin: "96px auto 94px auto",
+export const DivIntern = styled("div")(({theme})=>({
+  [theme.breakpoints.down(1100)]: {
+    margin: "110px auto 34px auto",
+  },
+  margin: "180px auto 34px auto",
   //minHeight: "calc(100vh - 461px)",
   display:"flex",
   justifyContent:"center",
@@ -25,7 +28,7 @@ export const DivIntern = styled("div")({
   p:{
     display:"flex",
   }
-});
+}));
 export const InputLogin = styled("input")({
   height:"20px",
   borderRadius:"4px",
@@ -78,5 +81,8 @@ export const View = styled("view")({
   img:{
     width:"25px",
     marginRight:"1ch",
+  },
+  p:{
+    fontSize:"14px",
   },
 });

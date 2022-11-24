@@ -1,7 +1,11 @@
-import { styled } from "@mui/system";
+import { styled, alpha } from "@mui/system";
+import MenuIcon from "../../assets/icons/menu-aberto.png"
 import { Typography } from "@mui/material";
 
-export const Container = styled("div")({
+export const Container = styled("div")(({theme})=>({
+  [theme.breakpoints.down(1090)]: {
+
+  },
   position:"fixed",
   top:"0",
   width: "100%",
@@ -10,7 +14,7 @@ export const Container = styled("div")({
   alignItems: "center",
   display: "flex",
   justifyContent: "space-between",
-});
+}));
 export const DivExtern = styled("div")({
   display: "flex",
   justifyContent: "space-between",
@@ -18,11 +22,28 @@ export const DivExtern = styled("div")({
   marginLeft:"4vw",
   marginRight:"1vw",
 });
-export const DivOtions = styled("div")({
-  width: "500px",
+export const DivOtions = styled("div")(({theme})=>({
+  width: "680px",
+  marginRight:"50px",
   display: "flex",
   alignItems: "center",
   justifyContent: "space-evenly",
+
+
+  [theme.breakpoints.down(1090)]: {
+    marginRight:"20px",
+    justifyContent:"end",
+    display: "flex",
+    flexWrap: "wrap",
+    width:"160px",
+    div:{
+      "hover":{
+        li:{
+          display:"block !important",
+        },
+      },
+    },
+  },
   a: {
     textDecoration: "none",
     p:{
@@ -35,13 +56,34 @@ export const DivOtions = styled("div")({
       },
     },
   },
-});
+  div:{
+    alignItems:"center",
+    display:"flex",
+    button:{
+      border:"none",
+      backgroundColor:"#FFFFFF",
+      height:"45px",
+      cursor:"pointer",
+        img:{
+          width:"40px",
+      },
+    },
+  },
+  [theme.breakpoints.up(1090)]: {
+    div:{
+      button:{
+        display:"none",
+      },
+    },
+  },
+}));
 
 export const CartBox = styled("div")({
   a:{
     display: "flex",
     alignItems: "center",
   },
+
   p:{
     marginLeft: "15px !important",
     fontSize: "24.5px !important",
@@ -49,3 +91,26 @@ export const CartBox = styled("div")({
     color:"#C71D1D !important"
   }
 });
+
+export const ListOptions = styled("ul") (({theme})=>({
+  flexDirection:"row",
+  display:"flex",
+  alignItems:"center",
+  position:"fixed",
+  [theme.breakpoints.down(1100)]: {
+    li:{
+      display:"none",
+    },
+  },
+}));
+
+export const List = styled("li")(({theme})=>({
+  listStyle:"none",
+  marginLeft:"10px",
+  a:{
+    [theme.breakpoints.down(1100)]: {
+      marginRight:"30px",
+    },
+    textDecoration: "none",
+  },
+}));

@@ -19,21 +19,32 @@ export const Registration: React.FC = () => {
   const [passwordCheck, setPasswordCheck] = useState("");
   const [name, setName] = useState("");
   const [email,setEmail] = useState("");
+  const [emailTest, setEmailTest] = useState({
+    emailCheck:false,
+  });
 
   const secureText = (password:string) => {
-    const lenght = password.length >= 6 && password.length <= 16;
+    const lenght = password.length >= 8 && password.length <= 16;
     const upperCase = RegExp(/^(?=.*[A-Z]).+$/);
     const lowerCase = RegExp(/^(?=.*[a-z]).+$/);
     const number = RegExp(/^(?=.*[0-9]).+$/);
     const specialCharacter = RegExp(/(?=.*\W)/g);
     const sequenceChar = RegExp(/[A-Za-z]{2}/g);
     const sequenceNumber = RegExp(/\d{2}/g);
-
+    
     setValidadeInput({
       case: upperCase.test(password) && lowerCase.test(password) && number.test(password),
       lenght,
       sequence: sequenceChar.test(password) || sequenceNumber.test(password),
       specialCharacter:specialCharacter.test(password),
+    });
+  };
+  
+  const onEmailInputTest = (email:string) => {
+    const emailCheck = RegExp(/^(.+)@(.+).com$/g);
+
+    setEmailTest({
+      emailCheck:emailCheck.test(email),
     });
   };
 
@@ -52,6 +63,7 @@ export const Registration: React.FC = () => {
   };
   const onEmailInputChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(evt.target.value);
+    onEmailInputTest(evt.target.value);
   };
 
   return (
@@ -63,6 +75,10 @@ export const Registration: React.FC = () => {
             <InputLogin onChange={onNameInputChange}/>
             <TextLogin>Email:</TextLogin>
             <InputLogin onChange={onEmailInputChange}/>
+            <View>
+              <img src={emailTest.emailCheck ? CheckIcon : CloseIcon} alt="" />
+              <p>O email {emailTest.emailCheck ? "" : "não"} atende os padrões</p>
+            </View>
             <TextLogin>Senha:</TextLogin>
             <InputLogin type = "password" onChange={onChangePassword}/>
             <View>
@@ -83,9 +99,9 @@ export const Registration: React.FC = () => {
             </View>
             <TextLogin>Confirmar senha:</TextLogin>
             <InputLogin type = "password" onChange={onVerifyPassword}/>
-            <ConfirmButton disabled={(password == passwordCheck && password != "")? false: true}><p>Registrar</p></ConfirmButton>
+            <ConfirmButton disabled={(password == passwordCheck && password != "" && emailTest.emailCheck == true)? false: true}><p>Registrar</p></ConfirmButton>
           <RegistrationDiv>
-            Entrar com: 
+            Entrar com:
             <Link to =""><img src={GoogleIcon} alt="Google"/></Link>
             <Link to =""><img src={GithubIcon} alt="Github"/></Link>
           </RegistrationDiv>
