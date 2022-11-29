@@ -1,6 +1,4 @@
 import { styled } from "@mui/system";
-import { Typography } from "@mui/material";
-import { url } from "inspector";
 import StoreImage from "../../assets/img/R.jpg"
 
 export const Container = styled("div")({
@@ -16,7 +14,6 @@ export const DivIntern = styled("div")(({theme})=>({
     margin: "110px auto 34px auto",
   },
   margin: "180px auto 34px auto",
-  //minHeight: "calc(100vh - 461px)",
   display:"flex",
   justifyContent:"center",
   div:{
@@ -29,11 +26,11 @@ export const DivIntern = styled("div")(({theme})=>({
     display:"flex",
   }
 }));
-export const InputLogin = styled("input")({
+export const InputRegistration = styled("input")({
   height:"20px",
   borderRadius:"4px",
 });
-export const TextLogin = styled("span")({
+export const LabelRegistration = styled("span")({
   marginTop:"20px",
   height:"30px",
 });

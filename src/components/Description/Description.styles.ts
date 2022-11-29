@@ -1,5 +1,4 @@
 import { styled } from "@mui/system";
-import { Typography } from "@mui/material";
 
 export const Container = styled("div")({
     margin: "177px 91px 94px 91px",

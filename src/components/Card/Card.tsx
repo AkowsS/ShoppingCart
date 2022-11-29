@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import { useContext} from 'react';
 import { 
   Container,
   ProductDescription,
@@ -10,8 +10,6 @@ import {
  } from './Card.styles';
 import { ProductInfo, ValueContext } from '../../context/Cart';
 import { Link } from 'react-router-dom';
-import { Description } from '../Description';
-import { PagesRoutes } from '../../pages';
  
 export function Card({data}:any){
 

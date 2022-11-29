@@ -1,6 +1,4 @@
-import { styled, alpha } from "@mui/system";
-import MenuIcon from "../../assets/icons/menu-aberto.png"
-import { Typography } from "@mui/material";
+import { styled } from "@mui/system";
 
 export const Container = styled("div")(({theme})=>({
   [theme.breakpoints.down(1090)]: {

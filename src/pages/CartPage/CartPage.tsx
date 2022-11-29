@@ -1,8 +1,5 @@
-import { Button, Typography } from '@mui/material';
 import React, { useContext } from 'react';
-import { CartItems } from '../../components/CartItems';
-import { Footer } from '../../components/Footer';
-import { Header } from '../../components/Header';
+import { Header,Footer,CartItems } from "components/";
 import { ValueContext } from '../../context/Cart';
 import { Container, DivIntern,PaymentArea,DivValues,TotalValue,ItemsArea,FinishButton } from './CartPage.styles';
 

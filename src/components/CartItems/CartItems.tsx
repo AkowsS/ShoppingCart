@@ -1,10 +1,7 @@
-import { Button, Typography } from '@mui/material';
-import React, { useContext, useEffect } from 'react';
-import { ValueContext } from '../../context/Cart';
+import React, { useContext } from 'react';
+import { ValueContext, ProductCart } from '../../context/Cart';
 import { Container, CartItem,ItemOptions,TextIformations,AmountItems,RemoveItemButton,AddItemButton,DecrementItemButton } from './CartItems.styles';
-import {ProductCart} from '../../context/Cart';
 import { Link } from 'react-router-dom';
-
 
 interface CartItemsProps{
   product: ProductCart;

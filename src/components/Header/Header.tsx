@@ -1,11 +1,8 @@
-import React, { useContext, useState } from 'react';
-import Logo from '../../assets/icons/logo.svg';
-import CarIcon from '../../assets/icons/carIcon.svg';
+import React, { useContext } from 'react';
 import { Container,DivOtions,DivExtern,CartBox,List,ListOptions } from './Header.styles';
 import { ValueContext } from '../../context/Cart';
 import { Link } from 'react-router-dom';
-import MenuIcon from "../../assets/icons/menu-aberto.png"
-import MenuItem from '@mui/material/MenuItem';
+import { MenuIcon, Logo, CarIcon } from "assets/";
 import Menu from '@mui/material/Menu';
 import Fade from '@mui/material/Fade';
 
@@ -46,14 +43,14 @@ export const Header: React.FC = () => {
               </List>
             </ListOptions>
             <Menu
-            id="fade-menu"
-            MenuListProps={{
-              'aria-labelledby': 'fade-button',
-            }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
+              id="fade-menu"
+              MenuListProps={{
+                'aria-labelledby': 'fade-button',
+              }}
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              TransitionComponent={Fade}
             >
               <List onClick={handleClose}><Link to="/"><p>HOME</p></Link></List>
               <List onClick={handleClose}><Link to=""><p>CONTACT</p></Link></List>

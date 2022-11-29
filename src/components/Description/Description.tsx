@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ProductInfo, ValueContext } from "../../context/Cart";
 import{AddtoCar, CentralizeItens, Container, ExternDiv, ItemDescription, ItemTitle, ProductPrice, TextInformations } from "./Description.styles";
 

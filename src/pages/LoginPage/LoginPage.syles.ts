@@ -1,5 +1,4 @@
 import { styled } from "@mui/system";
-import { Typography } from "@mui/material";
 import StoreImage from "../../assets/img/backimg.jpg"
 
 export const Container = styled("div")({

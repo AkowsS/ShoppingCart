@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Header } from "../../components";
-import { Footer } from "../../components/Footer";
-import GoogleIcon from '../../assets/icons/google.png';
-import GithubIcon from "../../assets/icons/github-logo.png";
+import { Header,Footer } from "components/";
+import { GoogleIcon, GithubIcon } from "assets/";
 import { Container, DivIntern, InputLogin, TextLogin,ConfirmButton,RegistrationDiv } from "./LoginPage.syles";
 
-export const LoginPage: React.FC = () => {
-
-  return (
+export const LoginPage: React.FC = () => 
     <Container>
       <Header/>
       <DivIntern>
@@ -28,5 +24,3 @@ export const LoginPage: React.FC = () => {
       </DivIntern>
       <Footer/>
     </Container>
-  );
-};

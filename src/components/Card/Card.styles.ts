@@ -1,5 +1,4 @@
 import { styled } from "@mui/system";
-import { Typography } from "@mui/material";
 
 export const ExternDiv = styled("div")({
   display: "flex",
